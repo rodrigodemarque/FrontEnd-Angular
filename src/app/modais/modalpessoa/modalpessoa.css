@@ -1,0 +1,12 @@
+.input-pesquisa {
+  height: 32px;
+  line-height: 32px;
+  padding: 0 6px;
+  font-size: 13px;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #000;
+  width: 180px;
+  margin-left: 10px;
+  margin-right: 20px;
+}

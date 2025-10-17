@@ -1,0 +1,34 @@
+.table-container {
+  margin: 20px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.destaque{
+  text-align: center;           /* Alinha o texto ao centro */
+  font-size: 24px;              /* Define o tamanho da fonte */
+  font-family: Arial, sans-serif; /* Define a família da fonte */
+  font-weight: bold;            /* Deixa o texto em negrito */
+  font-style: italic;           /* Deixa o texto em itálico */
+  color: white;               /* Cor do texto */
+  padding: 10px;                /* Espaçamento interno */
+  margin: 25px;                 /* Espaçamento externo */
+   text-transform: uppercase;    /* Transforma o texto em letras maiúsculas */
+  letter-spacing: 1px;          /* Espaçamento entre letras */
+  line-height: 1.5;             /* Altura da linha */
+}
+
+.input-pesquisa {
+  height: 32px;
+  line-height: 32px;
+  padding: 0 6px;
+  font-size: 13px;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #000;
+  width: 180px;
+  margin-left: 10px;
+  margin-right: 20px;
+}

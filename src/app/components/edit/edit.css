@@ -1,0 +1,20 @@
+.success-button {
+  background-color: #4609ec;
+  color: white;
+}
+
+.input-nome {
+  width: 35%;
+}
+
+.input-idade {
+  width: 5%;
+}
+
+.input-sexo {
+  width: 15%;
+}
+
+.full-width{
+  width: 100%;
+}

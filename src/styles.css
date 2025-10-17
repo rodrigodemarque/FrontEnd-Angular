@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.table-container {
+  margin: 20px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.destaque{
+  text-align: center;           /* Alinha o texto ao centro */
+  font-size: 24px;              /* Define o tamanho da fonte */
+  font-family: Arial, sans-serif; /* Define a família da fonte */
+  font-weight: bold;            /* Deixa o texto em negrito */
+  font-style: bold;           /* Deixa o texto em itálico */
+  color: white;               /* Cor do texto */
+  /*background-color: #f0f0f0;    /* Cor de fundo */
+  padding: 10px;                /* Espaçamento interno */
+  margin: 25px;                 /* Espaçamento externo */
+ /* border: 1px solid #ccc;       /* Borda fina cinza */
+  text-transform: uppercase;    /* Transforma o texto em letras maiúsculas */
+  letter-spacing: 1px;          /* Espaçamento entre letras */
+  line-height: 1.5;             /* Altura da linha */
+  cursor: pointer;
+}
