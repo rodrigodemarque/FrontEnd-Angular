@@ -1,3 +1,4 @@
+import { MatDatepickerIntlPtBr } from './shared/matdatapickerIntl';
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing-module';
@@ -22,9 +23,14 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DatePipe } from '@angular/common';
 import { InputMaskModule } from '@ngneat/input-mask';
 import { MaskCurrency } from './directives/mask-currency';
-import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDatepickerIntl, MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSort, MatSortModule } from '@angular/material/sort';
+import { LOCALE_ID} from '@angular/core';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { getPtBrPaginatorIntl } from './shared/matpaginatorIntl';
+
+
 
 @NgModule({
   declarations: [
@@ -60,7 +66,11 @@ import { MatSort, MatSortModule } from '@angular/material/sort';
   ],
   providers: [
          provideBrowserGlobalErrorListeners(),
-         DatePipe
+         DatePipe,
+         { provide: LOCALE_ID, useValue: 'pt-BR' },
+         { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
+         { provide: MatDatepickerIntl, useClass: MatDatepickerIntlPtBr },
+         { provide: MatPaginatorIntl, useFactory: getPtBrPaginatorIntl }
   ],
   bootstrap: [App]
 })

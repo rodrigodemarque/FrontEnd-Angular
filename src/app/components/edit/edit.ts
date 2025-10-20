@@ -61,7 +61,8 @@ export class Edit implements OnInit {
       next: (data) => {
         this.pessoaForm.patchValue({
         nome: data.nome,
-        dataNascimento: this.datepipe.transform(data.dataNascimento, 'yyyy-MM-dd'),
+        dataNascimento: new Date(data.dataNascimento),
+        //dataNascimento: this.datepipe.transform(data.dataNascimento, 'yyyy-MM-dd'),
         idade: data.idade,
         sexo: data.sexo,
         salario: data.salario
