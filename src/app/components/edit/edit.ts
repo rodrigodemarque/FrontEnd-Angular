@@ -84,6 +84,8 @@ export class Edit implements OnInit {
     dataNascimento: this.pessoaForm.value.dataNascimento
       ? new Date(this.pessoaForm.value.dataNascimento).toISOString()
       : null };
+console.log('Salário Formatado:', salarioFormatado, 'Tipo:', typeof salarioFormatado);
+console.log('Salário Numerico:', salarioNumerico, 'Tipo:', typeof salarioNumerico);
 
     if(this.isEdit){
       this.pessoaService.updatePessoa(this.id,pessoa).subscribe({
@@ -115,16 +117,24 @@ calcularIdade(dataNascimento: string | Date): number {
   return idade;
 }
 
-private parseMoeda(valor: string): number {
-  if (!valor) return 0;
-  // Remove "R$", espaços e pontos, troca vírgula por ponto
-  const numero = valor
-    .replace(/\s/g, '')        // Remove espaços
-    .replace('R$', '')         // Remove símbolo
-    .replace(/\./g, '')        // Remove pontos
-    .replace(',', '.');        // Troca vírgula por ponto
+parseMoeda(valor: any): number {
+  if (typeof valor === 'number') {
+    // já é número, retorna direto
+    return valor;
+  }
 
-  return parseFloat(numero);
+  if (typeof valor === 'string') {
+    const valorLimpo = valor
+      .replace(/\s/g, '')      // remove espaços
+      .replace('R$', '')       // remove símbolo R$
+      .replace(/\./g, '')      // remove pontos
+      .replace(',', '.')       // troca vírgula por ponto decimal
+      .trim();                 // remove espaços extras
+
+    const parsed = parseFloat(valorLimpo);
+    return isNaN(parsed) ? 0 : parsed;
+  }
+
+  return 0; // valor null/undefined ou tipo inesperado
 }
-
 }
