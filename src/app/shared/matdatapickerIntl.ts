@@ -1,5 +1,7 @@
 import { MatDatepickerIntl } from '@angular/material/datepicker';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class MatDatepickerIntlPtBr extends MatDatepickerIntl {
   override calendarLabel = 'Calendário';
   override openCalendarLabel = 'Abrir calendário';

@@ -77,6 +77,7 @@ export class Edit implements OnInit {
       this.snackBar.open('Preencer os campos obrigatórios', 'Fechar', { duration: 3000 });
       return;
     }
+
     const salarioFormatado = this.pessoaForm.value.salario;
     const salarioNumerico = this.parseMoeda(salarioFormatado);
     const pessoa: Pessoa = {id: this.id, ...this.pessoaForm.value,
@@ -84,8 +85,6 @@ export class Edit implements OnInit {
     dataNascimento: this.pessoaForm.value.dataNascimento
       ? new Date(this.pessoaForm.value.dataNascimento).toISOString()
       : null };
-console.log('Salário Formatado:', salarioFormatado, 'Tipo:', typeof salarioFormatado);
-console.log('Salário Numerico:', salarioNumerico, 'Tipo:', typeof salarioNumerico);
 
     if(this.isEdit){
       this.pessoaService.updatePessoa(this.id,pessoa).subscribe({
